@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold mb-6 md:mb-10 text-center font-playfair;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-full transition-all duration-300 inline-block text-center font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary border border-primary hover:bg-primary/5;
+  }
+  
+  .fade-in {
+    @apply opacity-0 translate-y-8;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+}
